@@ -20,7 +20,7 @@ pwn-write-ups/
 
 ---
 
-## 🛠️ Techniques Covered
+## 🛠️ Techniques Covered (Yet to come)
 - **Binary Exploitation**: Buffer overflows, format strings, shellcoding.
 - **Reverse Engineering**: Ghidra, IDA Pro, dynamic analysis.
 - **Web/Pwn**: SQLi, XSS, privilege escalation.
@@ -60,4 +60,4 @@ This repository is open-source under [MIT License](LICENSE).
 ---
 
 Happy hacking! 💻🔐  
-*— [belx/bytewice]*
+*— [belcx/bytewice]*
