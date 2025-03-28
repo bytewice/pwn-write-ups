@@ -1,2 +1,0 @@
-fzr o writeup do grepping live output do modulo practicing piping
-fzr do duplicated piped data with tee

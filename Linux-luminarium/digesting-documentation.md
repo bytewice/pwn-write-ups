@@ -13,7 +13,7 @@
 - What made this challenge tricky or interesting?
 
 To successfully solve this challenge, you'll need to combine fundamental documentation navigation skills with knowledge gained from all previous Pwn College dojo exercises. This builds progressively on the concepts covered in earlier modules.
-- ```man -k flag```
+- ```man -k [apropos]```
 
 HINT 1: man man teaches you advanced usage of the man command itself, and you must use this knowledge to figure out how to search for the hidden manpage that will tell you how to use /challenge/challenge
 
@@ -26,16 +26,34 @@ And I found this problem interesting because it was the first to require a littl
 ## 🛠️ Solution Steps
 ### Step 1: Identifying the Target
 [How did you approach finding the right manual?]
-- Tools used (e.g., `man`, `apropos`, Google, etc.).
-- Keywords or commands you tried.
+- Tools used: the command `man -k flag`.
+You use it to find out any information about a flag in the many manuals in the system
 
 ### Step 2: Locating the Manual
-[Describe the process of narrowing down the documentation.]
-- Did you find multiple candidates? How did you filter them?
-- Was there a specific section or flag mentioned in the challenge?
+You'll find out a few manual that has a string char attached to it, but there's one that seems a little bit odd: that's the manual whose description is `print the flag!`
+- Let's call this manual `flag_manual` to not spoil your experience in finding it.
+
+### Step 3: Reading the Manual
+Having the manual in hands, all that's left is to read the manual.
+- Use the command: `man flag_manual`
+In the description of the manual you can see the following lines:
+
+```
+DESCRIPTION
+  Output the flag when called with the right arguments.
+
+  --fortune
+        read a fortune
+
+  --version
+        output version information and exit
+
+  --kdlnxs NUM
+        print the flag if NUM is 720
+```
 
 ### Step 3: Extracting the Answer
-[How did you extract the solution from the manual?]
-- Example:  
-  ```bash
-  man <command> | grep "<keyword>"
+
+So you have all the things you need at hand, all that's left is to extract the flag. You can accomplish it after using the command `/challenge/challenge` with de argument kdlnxs and 720:
+
+- `/chalenge/chalenge --kdlnxs 720` 
