@@ -57,3 +57,6 @@ DESCRIPTION
 So you have all the things you need at hand, all that's left is to extract the flag. You can accomplish it after using the command `/challenge/challenge` with de argument kdlnxs and 720:
 
 - `/chalenge/chalenge --kdlnxs 720` 
+
+Happy hacking! 💻🔐  
+*— [belcx/bytewice]*
