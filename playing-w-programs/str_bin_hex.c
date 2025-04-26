@@ -61,27 +61,30 @@ char* hex_to_str(const char* hex) {
     return str;
 }
 
-char *hex_to_bit(const char* hex){
-    hex = hex_to_str(hex);
-    hex = str_to_bits(hex); 
+char* hex_to_bit(const char* hex) {
+    char* temp_str = hex_to_str(hex);       // Hex -> texto original
+    char* bits = str_to_bits(temp_str);     // Texto -> bits
+    free(temp_str);                         // Liberar o intermediário
+    return bits;
+}
+
+char* bits_to_hex(const char* bits) {
+    char* temp_str = bits_to_str(bits);     // Bits -> texto original
+    char* hex = str_to_hex(temp_str);       // Texto -> hex
+    free(temp_str);                         // Liberar o intermediário
     return hex;
 }
 
-char *bits_to_hex(const char* bits){
-    bits = bits_to_str(bits);
-    bits = str_to_hex(bits);
-    return bits;
-}
 
 // Exemplo de uso
 int main() {
     
-    char* sample = "9E94E0B88D84A28B";
-    sample = hex_to_bit(sample);
+    char* sample = "crxtrkwn";
+    sample = str_to_hex(sample);
     printf("From Bits: %s\n", sample);
     
     //liberar o ponteiro
     free(sample);
-    
+
     return 0;
 }
